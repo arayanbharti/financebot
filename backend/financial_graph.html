@@ -1,0 +1,97 @@
+<!-- Load Plotly.js -->
+<script src="https://cdn.plotly.com/plotly-latest.min.js"></script>
+<head>
+    <meta charset="UTF-8">
+    <title>Financial Report Graph</title>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/plotly.js/2.20.0/plotly.min.js"></script>
+</head>
+<!-- Create a div where the chart will render -->
+<!-- Create a div where the chart will render -->
+<div id="myDiv" style="width: 100%; height: 600px;"></div>
+
+<!-- Create a script with the chart data -->
+<script>
+    var data = [
+        // Current assets
+        {
+            x: ['Cash and cash equivalents', 'Derivative assets', 'Loans to parent and affiliates'],
+            y: [229, 1, 39454],
+            type: 'bar',
+            name: 'Current assets (2023)'
+        },
+        {
+            x: ['Cash and cash equivalents', 'Derivative assets', 'Loans to parent and affiliates'],
+            y: [348, 2, 34971],
+            type: 'bar',
+            name: 'Current assets (2022)'
+        },
+        // Non-current assets
+        {
+            x: ['Loans to parent and affiliates', 'Deferred tax assets'],
+            y: [5391, 2],
+            type: 'bar',
+            name: 'Non-current assets (2023)'
+        },
+        {
+            x: ['Loans to parent and affiliates', 'Deferred tax assets'],
+            y: [5488, 2],
+            type: 'bar',
+            name: 'Non-current assets (2022)'
+        },
+        // Current liabilities
+        {
+            x: ['Derivative liabilities', 'Loans from parent and affiliates', 'Current income tax liabilities', 'Financial debt', 'Other liabilities'],
+            y: [1, 24644, 36, 914, 1],
+            type: 'bar',
+            name: 'Current liabilities (2023)'
+        },
+        {
+            x: ['Derivative liabilities', 'Loans from parent and affiliates', 'Current income tax liabilities', 'Financial debt', 'Other liabilities'],
+            y: [2, 37894, 33, 639, 0],
+            type: 'bar',
+            name: 'Current liabilities (2022)'
+        },
+        // Non-current liabilities
+        {
+            x: ['Loans from parent and affiliates'],
+            y: [2129],
+            type: 'bar',
+            name: 'Non-current liabilities (2023)'
+        },
+        {
+            x: ['Loans from parent and affiliates'],
+            y: [2236],
+            type: 'bar',
+            name: 'Non-current liabilities (2022)'
+        },
+        // Equity
+        {
+            x: ['Share capital', 'Additional paid-in capital', 'Retained earnings'],
+            y: [1, 17348, 3],
+            type: 'bar',
+            name: 'Equity (2023)'
+        },
+        {
+            x: ['Share capital', 'Additional paid-in capital', 'Retained earnings'],
+            y: [1, 0, 6],
+            type: 'bar',
+            name: 'Equity (2022)'
+        }
+    ];
+
+    // Layout of the chart
+    var layout = {
+        title: 'Balance sheet',
+        barmode: 'group',
+        xaxis: {
+            title: 'Category'
+        },
+        yaxis: {
+            title: 'Value (millions of Dollars)'
+        }
+    };
+
+    // Render the chart
+    Plotly.newPlot('myDiv', data, layout);
+</script>
